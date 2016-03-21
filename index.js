@@ -8,11 +8,11 @@ const indento = require('indento')
 const spin = new Spin('Box1')
 
 module.exports = function (cli) {
-  const date = cli.flags.date
+  const season = cli.flags.season
   const weekDay = cli.flags.weekday || new Date().getDay()
   const proxy = 'http://7d9hn8.com1.z0.glb.clouddn.com/wxt2005/bangumi-list/master/json/bangumi-__SEASON__.json'
   spin.start()
-  fetch(date, {format: true, proxy})
+  fetch(season, {format: true, proxy})
     .then(data => {
       spin.stop()
       const today = data[weekDay]

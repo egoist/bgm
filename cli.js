@@ -6,14 +6,16 @@ const main = require('./')
 const cli = meow(`
   Usage:
 
-    bgm [season]
+    bgm
 
+    -w/--weekday    Display by specific weekday
+    -s/--season     Display by specific season
     -v/--version    Print version
     -h/--help       Print help
 `, {
   alias: {
     w: 'weekday',
-    d: 'date',
+    s: 'season',
     h: 'help',
     v: 'version'
   },
