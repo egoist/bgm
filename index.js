@@ -17,10 +17,16 @@ module.exports = function (cli) {
       spin.stop()
       const today = data[weekDay]
       console.log('\n', indento(chalk.cyan(chineseWeekday(weekDay)), 1), '\n')
-      let t = today.map(item => {
-        const time = item.timeCN ? `CN: ${formatTime(item.timeCN)}` : `JP: ${formatTime(item.timeJP)}`
-        return [item.titleCN, time]
-      })
+      let t = today
+        .sort((a, b) => {
+          const aTime = parseInt(a.timeCN || a.timeCN || 0, 10)
+          const bTime = parseInt(b.timeCN || b.timeCN || 0, 10)
+          return aTime - bTime
+        })
+        .map(item => {
+          const time = item.timeCN ? `CN: ${formatTime(item.timeCN)}` : `JP: ${formatTime(item.timeJP)}`
+          return [item.titleCN, time]
+        })
       t = table(t)
       console.log(indento(t, 2), '\n')
     })
