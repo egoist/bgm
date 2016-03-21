@@ -13,6 +13,7 @@ $ npm install -g bgm
 ## Usage
 
 ```bash
+# today
 $ bgm
 
 # by weekday: 0~6
