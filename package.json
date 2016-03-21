@@ -1,0 +1,43 @@
+{
+  "name": "bgm",
+  "version": "0.0.0",
+  "description": "Display bangumi list in CLI.",
+  "license": "MIT",
+  "repository": "egoist/bgm",
+  "author": {
+    "name": "EGOIST",
+    "email": "0x142857@gmail.com",
+    "url": "github.com/egoist"
+  },
+  "bin": "cli.js",
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "xo"
+  },
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "keywords": [
+    "cli-app",
+    "cli",
+    "bangumi"
+  ],
+  "dependencies": {
+    "bgm-fetch": "^1.0.0",
+    "chalk": "^1.1.1",
+    "indento": "^1.1.1",
+    "io-spin": "^0.3.0",
+    "meow": "^3.7.0",
+    "string-width": "^1.0.1"
+  },
+  "devDependencies": {
+    "xo": "latest"
+  },
+  "xo": {
+    "semicolon": false,
+    "space": 2
+  }
+}
