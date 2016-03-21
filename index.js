@@ -19,9 +19,19 @@ module.exports = function (cli) {
       console.log('\n', indento(chalk.cyan(chineseWeekday(weekDay)), 1), '\n')
       let t = today
         .sort((a, b) => {
-          const aTime = parseInt(a.timeCN || a.timeCN || 0, 10)
-          const bTime = parseInt(b.timeCN || b.timeCN || 0, 10)
+					const aTime = getTime(a)
+					const bTime = getTime(b)
+
           return aTime - bTime
+
+					function getTime(item) {
+						if (item.timeCN) {
+							return parseInt(item.timeCN)
+						} else if (item.timeJP) {
+							return parseInt(item.timeJP) - 100
+						}
+						return 0
+					}
         })
         .map(item => {
           const time = item.timeCN ? `CN: ${formatTime(item.timeCN)}` : `JP: ${formatTime(item.timeJP)}`
