@@ -1,6 +1,6 @@
 {
   "name": "bgm",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Display bangumi list in CLI.",
   "license": "MIT",
   "repository": "egoist/bgm",
