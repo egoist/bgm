@@ -2,7 +2,7 @@
 
 > Display bangumi list in CLI.
 
-![preview](https://ooo.0o0.ooo/2016/03/21/56efbf0451af2.png)
+![preview](https://ooo.0o0.ooo/2016/03/21/56efc5dfbc99c.png)
 
 ## Install
 
