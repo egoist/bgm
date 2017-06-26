@@ -18,20 +18,20 @@ module.exports = function (cli) {
     season,
     proxy
   }).then(data => {
+    spin.stop()
+    const today = data[weekDay]
+    console.log('\n', indento(chalk.cyan(chineseWeekday(weekDay)), 1), '\n')
+    console.log(table(today.map(item => [
+      '  ' + item.titleTranslate['zh-Hans'][0],
+      formatTime(item.begin)
+    ]), {
+      stringLength: stringWidth
+    }))
+    console.log()
+  })
+    .catch(err => {
       spin.stop()
-      const today = data[weekDay]
-      console.log('\n', indento(chalk.cyan(chineseWeekday(weekDay)), 1), '\n')
-      console.log(table(today.map(item => [
-        '  '+ item['titleTranslate']['zh-Hans'][0],
-        formatTime(item.begin)
-      ]), {
-        stringLength: stringWidth
-      }))
-      console.log()
-    })
-    .catch(e => {
-      spin.stop()
-      console.error(e.stack)
+      console.error(err.stack)
     })
 }
 
